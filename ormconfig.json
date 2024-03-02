@@ -1,0 +1,17 @@
+{
+  "type": "postgres",
+  "host": "localhost",
+  "port": 5432,
+  "username": "postgres",
+  "password": "postgres",
+  "database": "nodejs-template",
+  "synchronize": false,
+  "logging": true,
+  "entities": ["src/db/models/*.ts"],
+  "migrations": ["src/db/migrations/*.ts"],
+  "seeds": ["src/db/seeds/*.ts"],
+  "cli": {
+    "migrationsDir": "src/db/migrations",
+    "entitiesDir": "src/db/models"
+  }
+}

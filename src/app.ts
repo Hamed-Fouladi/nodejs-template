@@ -1,4 +1,7 @@
 import * as express from "express";
+import * as dotenv from "dotenv";
+
+dotenv.config();
 
 class App {
   public app: express.Application;
@@ -6,14 +9,12 @@ class App {
 
   constructor() {
     this.app = express();
+    this.port = Number(process.env.SERVER_PORT);
   }
 
-  /**
-   * listen
-   */
   public listen() {
-    this.app.listen(5000, () => {
-      console.log("App is listening on the port 5000");
+    this.app.listen(this.port, () => {
+      console.log(`App is listening on the port ${this.port}`);
     });
   }
 }

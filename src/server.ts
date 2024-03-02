@@ -1,5 +1,14 @@
+import { connectToDatabase } from "./db/db-connect";
 import App from "./app";
+import homeRoutes from './routes/home.routes';
 
-const app = new App();
+connectToDatabase().then(() => {
+    console.log('Success');
+  });
+  
+const server = new App();
 
-app.listen();
+server.listen();
+
+server.app.use('/', homeRoutes);
+
